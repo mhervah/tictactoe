@@ -487,23 +487,23 @@ canvas.addEventListener("click", function (e) {
   if (Xmove && end && !findWinner(board)) {
     if (
       !(
-        (e.offsetX > 150 && e.offsetX < 150 + lw) ||
-        (e.offsetX > 300 + lw && e.offsetX < 300 + 2 * lw) ||
-        (e.offsetY > 150 && e.offsetY < 150 + lw) ||
-        (e.offsetY > 300 + lw && e.offsetY < 30 + 2 * lw)
+        (e.offsetX > 200 && e.offsetX < 200 + lw) ||
+        (e.offsetX > 400 + lw && e.offsetX < 400 + 2 * lw) ||
+        (e.offsetY > 200 && e.offsetY < 200 + lw) ||
+        (e.offsetY > 400 + lw && e.offsetY < 400 + 2 * lw)
       )
     ) {
       if (
-        board[Math.floor(e.offsetY / (150 + lw))][
-          Math.floor(e.offsetX / (150 + lw))
+        board[Math.floor(e.offsetY / (200 + lw))][
+          Math.floor(e.offsetX / (200 + lw))
         ] === " "
       ) {
         if (end) {
           end = false;
           drawX(
             [
-              Math.floor(e.offsetY / (150 + lw)),
-              Math.floor(e.offsetX / (150 + lw)),
+              Math.floor(e.offsetY / (200 + lw)),
+              Math.floor(e.offsetX / (200 + lw)),
             ],
             lw
           );
@@ -511,8 +511,8 @@ canvas.addEventListener("click", function (e) {
         makeMove(
           board,
           [
-            Math.floor(e.offsetY / (150 + lw)),
-            Math.floor(e.offsetX / (150 + lw)),
+            Math.floor(e.offsetY / (200 + lw)),
+            Math.floor(e.offsetX / (200 + lw)),
           ],
           true
         );
