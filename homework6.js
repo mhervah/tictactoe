@@ -272,8 +272,8 @@ let board = [
 
 let lw = 15;
 
-canvas.width = 450 + 2 * lw;
-canvas.height = 450 + 2 * lw;
+canvas.width = 600 + 2 * lw;
+canvas.height = 600 + 2 * lw;
 
 const animBoard = function (lw) {
   let x1 = 0;
@@ -287,11 +287,11 @@ const animBoard = function (lw) {
     let end = false;
     const horizontal1 = function () {
       ctx.beginPath();
-      ctx.moveTo(0, 150 + lw / 2);
-      ctx.lineTo(x1, 150 + lw / 2);
+      ctx.moveTo(0, 200 + lw / 2);
+      ctx.lineTo(x1, 200 + lw / 2);
       ctx.lineWidth = lw;
       ctx.stroke();
-      if (x1 >= 450 + 2 * lw) {
+      if (x1 >= 600 + 2 * lw) {
         end = true;
         return;
       }
@@ -299,11 +299,11 @@ const animBoard = function (lw) {
     };
     const horizontal2 = function () {
       ctx.beginPath();
-      ctx.moveTo(0, 300 + lw + lw / 2);
-      ctx.lineTo(x2, 300 + lw + lw / 2);
+      ctx.moveTo(0, 400 + lw + lw / 2);
+      ctx.lineTo(x2, 400 + lw + lw / 2);
       ctx.lineWidth = lw;
       ctx.stroke();
-      if (x2 >= 450 + 2 * lw) {
+      if (x2 >= 600 + 2 * lw) {
         end = true;
         return;
       }
@@ -311,12 +311,12 @@ const animBoard = function (lw) {
     };
     const vertical1 = function () {
       ctx.beginPath();
-      ctx.moveTo(150 + lw / 2, 0);
-      ctx.lineTo(150 + lw / 2, y1);
+      ctx.moveTo(200 + lw / 2, 0);
+      ctx.lineTo(200 + lw / 2, y1);
       ctx.lineWidth = lw;
       ctx.stroke();
 
-      if (y1 >= 450 + 2 * lw) {
+      if (y1 >= 600 + 2 * lw) {
         end = true;
         return;
       }
@@ -324,12 +324,12 @@ const animBoard = function (lw) {
     };
     const vertical2 = function () {
       ctx.beginPath();
-      ctx.moveTo(300 + lw + lw / 2, 0);
-      ctx.lineTo(300 + lw + lw / 2, y2);
+      ctx.moveTo(400 + lw + lw / 2, 0);
+      ctx.lineTo(400 + lw + lw / 2, y2);
       ctx.lineWidth = lw;
       ctx.stroke();
 
-      if (y2 >= 450 + 2 * lw) {
+      if (y2 >= 600 + 2 * lw) {
         end = true;
         return;
       }
@@ -355,48 +355,48 @@ const animBoard = function (lw) {
 };
 
 const gameEnd = function (obj, lw) {
-  let x1 = obj.winningLocations[0][1] * (150 + lw);
-  let y1 = obj.winningLocations[0][0] * (150 + lw);
-  let x2 = obj.winningLocations[1][1] * (150 + lw);
-  let y2 = obj.winningLocations[1][0] * (150 + lw);
-  let x3 = obj.winningLocations[2][1] * (150 + lw);
-  let y3 = obj.winningLocations[2][0] * (150 + lw);
+  let x1 = obj.winningLocations[0][1] * (200 + lw);
+  let y1 = obj.winningLocations[0][0] * (200 + lw);
+  let x2 = obj.winningLocations[1][1] * (200 + lw);
+  let y2 = obj.winningLocations[1][0] * (200 + lw);
+  let x3 = obj.winningLocations[2][1] * (200 + lw);
+  let y3 = obj.winningLocations[2][0] * (200 + lw);
   console.log(obj.winningLocations);
   let a = 0;
 
   const animate = function () {
-    ctx.clearRect(x1, y1, 150, 150);
-    ctx.clearRect(x2, y2, 150, 150);
-    ctx.clearRect(x3, y3, 150, 150);
-    ctx.fillStyle = "rgba(250,140,0," + a + ")";
-    ctx.fillRect(x1, y1, 150, 150);
-    ctx.fillRect(x2, y2, 150, 150);
-    ctx.fillRect(x3, y3, 150, 150);
+    ctx.clearRect(x1, y1, 200, 200);
+    ctx.clearRect(x2, y2, 200, 200);
+    ctx.clearRect(x3, y3, 200, 200);
+    ctx.fillStyle = "rgba(240,140,0," + a + ")";
+    ctx.fillRect(x1, y1, 200, 200);
+    ctx.fillRect(x2, y2, 200, 200);
+    ctx.fillRect(x3, y3, 200, 200);
     if (obj.winner === "x") {
       ctx.beginPath();
-      ctx.moveTo(x1 + 30, y1 + 30);
-      ctx.lineTo(x1 + 120, y1 + 120);
-      ctx.moveTo(x1 + 30, y1 + 120);
-      ctx.lineTo(x1 + 120, y1 + 30);
-      ctx.moveTo(x2 + 30, y2 + 30);
-      ctx.lineTo(x2 + 120, y2 + 120);
-      ctx.moveTo(x2 + 30, y2 + 120);
-      ctx.lineTo(x2 + 120, y2 + 30);
-      ctx.moveTo(x3 + 30, y3 + 30);
-      ctx.lineTo(x3 + 120, y3 + 120);
-      ctx.moveTo(x3 + 30, y3 + 120);
-      ctx.lineTo(x3 + 120, y3 + 30);
+      ctx.moveTo(x1 + 40, y1 + 40);
+      ctx.lineTo(x1 + 160, y1 + 160);
+      ctx.moveTo(x1 + 40, y1 + 160);
+      ctx.lineTo(x1 + 160, y1 + 40);
+      ctx.moveTo(x2 + 40, y2 + 40);
+      ctx.lineTo(x2 + 160, y2 + 160);
+      ctx.moveTo(x2 + 40, y2 + 160);
+      ctx.lineTo(x2 + 160, y2 + 40);
+      ctx.moveTo(x3 + 40, y3 + 40);
+      ctx.lineTo(x3 + 160, y3 + 160);
+      ctx.moveTo(x3 + 40, y3 + 160);
+      ctx.lineTo(x3 + 160, y3 + 40);
       ctx.lineWidth = lw;
       ctx.stroke();
     } else {
       ctx.beginPath();
-      ctx.arc(x1 + 75, y1 + 75, 45, 0, 2 * Math.PI);
+      ctx.arc(x1 + 100, y1 + 100, 60, 0, 2 * Math.PI);
       ctx.stroke();
       ctx.beginPath();
-      ctx.arc(x2 + 75, y2 + 75, 45, 0, 2 * Math.PI);
+      ctx.arc(x2 + 100, y2 + 100, 60, 0, 2 * Math.PI);
       ctx.stroke();
       ctx.beginPath();
-      ctx.arc(x3 + 75, y3 + 75, 45, 0, 2 * Math.PI);
+      ctx.arc(x3 + 100, y3 + 100, 60, 0, 2 * Math.PI);
       ctx.stroke();
     }
 
@@ -413,9 +413,9 @@ const gameEnd = function (obj, lw) {
 
 let end = true;
 const drawO = function (locations, lw) {
-  let x = locations[1] * (150 + lw) + 150 / 2;
-  let y = locations[0] * (150 + lw) + 150 / 2;
-  const radius = 45;
+  let x = locations[1] * (200 + lw) + 200 / 2;
+  let y = locations[0] * (200 + lw) + 200 / 2;
+  const radius = 60;
   let curPerc = 0;
   const circ = Math.PI * 2;
   const quart = Math.PI / 2;
@@ -441,13 +441,13 @@ const drawO = function (locations, lw) {
 };
 
 const drawX = function (locations, lw) {
-  let y1 = locations[0] * (150 + lw) + 30;
-  let x1 = locations[1] * (150 + lw) + 30;
+  let y1 = locations[0] * (200 + lw) + 40;
+  let x1 = locations[1] * (200 + lw) + 40;
   let i = 0;
-  let y2 = locations[0] * (150 + lw) + 120;
-  let x2 = locations[1] * (150 + lw) + 30;
+  let y2 = locations[0] * (200 + lw) + 160;
+  let x2 = locations[1] * (200 + lw) + 40;
   let j = 0;
-  let v = 6;
+  let v = 10;
   ctx.strokeStyle = "black";
 
   const animate = function () {
@@ -467,11 +467,11 @@ const drawX = function (locations, lw) {
       ctx.stroke();
       j += v;
     };
-    if (i <= 90) line1();
-    if (i > 90 && j <= 90) {
+    if (i <= 120) line1();
+    if (i > 120 && j <= 120) {
       line2();
     }
-    if (i > 90 && j > 90) {
+    if (i > 120 && j > 120) {
       end = true;
       return;
     }
